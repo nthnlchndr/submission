@@ -47,18 +47,18 @@ const addBookHandler = (request, h) => {
     return response;
   }
 
-//   const response = h.response({
-//     status: "fail",
-//     message: "Buku gagal ditambahkan",
-//   });
-//   response.code(500);
-//   return response;
+   const response = h.response({
+     status: "error",
+     message: "Buku gagal ditambahkan",
+   });
+   response.code(500);
+   return response;
 };
 
 const getAllBooksHandler = (request, h) => {
     const {name, reading, finished} = request.query;
 
-    if(books.length===0){
+    if(books.length === 0){
         const response =  h.response({
             status: "success",
             data:{
